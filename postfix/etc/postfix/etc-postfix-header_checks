@@ -1,0 +1,11 @@
+#Cela permettra aux emails sortant d'avoir des informations sensibles supprimées du header, 
+# par exemple votre client (User-Agent) et votre adresse IP (X-Originating-IP).
+
+#Attention à ne pas supprimer certains éléments si vous ne souhaitez pas atterrir dans 
+#les spams en dégradant votre note calculée par les anti-spams (SpamAssassin, 
+#Rspamd), il est par exemple déconseillé de supprimer Message-ID.
+
+
+/^Received:/         IGNORE
+/^User-Agent:/       IGNORE
+/^X-Originating-IP:/ IGNORE
